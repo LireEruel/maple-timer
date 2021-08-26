@@ -6,10 +6,27 @@ import useSound from "use-sound";
 const useStyles = makeStyles({
 	root: {
 		paddingTop: "7%",
+		width: "100%",
+		height: "100%",
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		justifyContent: "space-evenly",
 	},
-	title: {
+	runningBox: {
+		backgroundColor: "#edf2f2",
+		width: "20%",
+		borderRadius: "20%",
+	},
+	title: {},
+	text: {
 		textAlign: "center",
 		fontWeight: 600,
+	},
+	runningTime: {
+		textAlign: "center",
+		fontWeight: 600,
+		color: "blue",
 	},
 });
 
@@ -82,15 +99,20 @@ const MainPageView = () => {
 
 	return (
 		<div className={classes.root}>
-			<Typography className={classes.title} variant="h2">
-				메이플 알람
-			</Typography>
-			<Typography className={classes.title} variant="h3">
-				{hour} : {minute} : {second}
-			</Typography>
-			<Typography className={classes.title} variant="h3">
-				{allSecond}
-			</Typography>
+			<div className={classes.title}>
+				<Typography className={classes.text} variant="h2">
+					메이플 알람
+				</Typography>
+			</div>
+
+			<div className={classes.runningBox}>
+				<Typography className={classes.runningTime} variant="h3">
+					사냥 시간
+				</Typography>
+				<Typography className={classes.text} variant="h3">
+					{hour} : {minute} : {second}
+				</Typography>
+			</div>
 		</div>
 	);
 };
